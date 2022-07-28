@@ -44,13 +44,15 @@ ZS 脚本中文转换器支持通过 VSCode 的配置编辑器进行配置，
 
 ## 开源许可
 
-ZS 脚本中文转换器是 VSCode 拓展 [native-ascii-converter](https://github.com/cwan/native-ascii-converter) 的分支。
+ZS 脚本中文转换器是 VSCode 拓展 [native-ascii-converter](https://github.com/cwan/native-ascii-converter) 的分支，
 
-本拓展的日文支持继承自上游仓库，在此向原作者 cwan 致谢。
+上游项目依据 MIT 许可证开源，开源许可：https://github.com/cwan/native-ascii-converter/blob/master/LICENSE。
 
-与上游仓库相同，本拓展依据 MIT 许可证在 [GitHub](https://github.com/RisingInIris2017/zenscript-unicode-converter) 开源。
+本拓展的日文支持继承自上游项目，在此向原作者 cwan 致谢。
 
-ZS 脚本中文转换器的开源许可：https://github.com/RisingInIris2017/zenscript-unicode-converter/blob/master/LICENSE
+与上游项目相同，本拓展依据 MIT 许可证在 [GitHub](https://github.com/RisingInIris2017/zenscript-unicode-converter) 开源。
+
+本拓展的开源许可：https://github.com/RisingInIris2017/zenscript-unicode-converter/blob/main/LICENSE
 
 ## 未来计划
 

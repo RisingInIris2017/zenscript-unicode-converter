@@ -2,7 +2,7 @@
 
 Fork of "[native-ascii-converter](https://github.com/cwan/native-ascii-converter)" VS Code extension, aims to help Minecraft modpack-makers to deal with unicodes.
 
-[**中文用户请点这里查看中文说明文档**](https://github.com/RisingInIris2017/zenscript-unicode-converter/blob/master/README_zh.md)
+[**中文用户请点这里查看中文说明文档**](https://github.com/RisingInIris2017/zenscript-unicode-converter/blob/main/README_zh.md)
 
 ## Features
 

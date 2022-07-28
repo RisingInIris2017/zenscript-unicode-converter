@@ -4,7 +4,7 @@
 	"description": "Fork of \"zenscript-unicode-converter\" VS Code extension, aims to help Minecraft modpack-makers to deal with unicodes.",
 	"publisher": "IsaacTadokoro",
 	"icon": "assets/icon.png",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"engines": {
 		"vscode": "^1.29.0"
 	},
