@@ -1,0 +1,7 @@
+{
+  "zenscript-unicode-converter.letter-case": "Use lower case in Unicode. False for upper case.",
+  "zenscript-unicode-converter.comment-conversion": "Unicode conversion of the comment is carried out",
+  "zenscript-unicode-converter.auto-conversion-on-save": "Convert automatically when the ZenScript source file is saved",
+  "zenscript-unicode-converter.auto-conversion-on-activate": "Convert automatically when the ZenScript source file is activated",
+  "zenscript-unicode-converter.use-files.associations": "Use \"files.associations\" in the settings.json for the automatic conversions"
+}

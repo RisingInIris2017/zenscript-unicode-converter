@@ -1,0 +1,7 @@
+{
+  "zenscript-unicode-converter.letter-case": "使用小写字母表示 Unicode 编码，如设为 false 则使用大写字母",
+  "zenscript-unicode-converter.comment-conversion": "是否转换注释中的字符",
+  "zenscript-unicode-converter.auto-conversion-on-save": "是否在保存 ZenScript 源文件时，自动进行编码转换",
+  "zenscript-unicode-converter.auto-conversion-on-activate": "是否在切换活动的 ZenScript 源文件时，自动进行编码转换",
+  "zenscript-unicode-converter.use-files.associations": "使用 settings.json 中的 \"files.associations\" 配置项来控制编码转换功能"
+}
