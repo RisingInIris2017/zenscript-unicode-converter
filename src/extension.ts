@@ -33,11 +33,16 @@ const convertNativeToAscii = () : void => {
   const newText = utils.getFullText()
     .split(/\r?\n/g)
     .map(line => {
-      if (!commentConversion && line.startsWith(COMMENT_PREFIX)) {
-        return line;
-      } else {
+      if (commentConversion) {return utils.nativeToAscii(line, lowerCase);}
+      else {
+        var trimmedLine = line.trimLeft();
+        if (trimmedLine.startsWith(COMMENT_PREFIX)) {return line;}
+        else {
+          var removeStatementLine = trimmedLine.substring(trimmedLine.indexOf(';') + 1).trimLeft();
+          if (removeStatementLine.startsWith(COMMENT_PREFIX)) {return line}
+        }
         return utils.nativeToAscii(line, lowerCase);
-      }
+      }      
     })
     .join(utils.getEol());
 

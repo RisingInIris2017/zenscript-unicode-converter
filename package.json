@@ -1,10 +1,10 @@
 {
-	"name": "zenscript-unicode-converter",
-	"displayName": "Zenscript Unicode Converter",
+	"name": "zenscript-unicode-converter-revived",
+	"displayName": "Zenscript Unicode Converter Revived",
 	"description": "Fork of \"zenscript-unicode-converter\" VS Code extension, aims to help Minecraft modpack-makers to deal with unicodes.",
-	"publisher": "IsaacTadokoro",
+	"publisher": "IsaacThompson",
 	"icon": "assets/icon.png",
-	"version": "1.0.3",
+	"version": "1.0.6",
 	"engines": {
 		"vscode": "^1.29.0"
 	},
