@@ -1,72 +1,72 @@
-[size=24px][b]Zenscript Unicode Converter - ZS脚本中文转换器[/b][/size]
+[size=4][b]Zenscript Unicode Converter - ZS脚本中文转换器[/b][/size]
 
-[size=16px][b]概述[/b][/size]
+[size=3][b]概述[/b][/size]
 
-[size=4]ZS脚本中文转换器是一个开源、轻量的 VSCode 扩展，旨在解决困扰中文整合包作者的一个问题：[/size]
+[size=2]ZS 脚本中文转换器是一个开源、轻量的 VSCode 扩展，旨在解决困扰中文整合包作者的一个问题：[/size]
 
-[size=4]如果在 CraftTweaker 魔改脚本中包含中文等 Unicode 字符，那么在游戏内可能会显示为乱码。[/size]
+[size=2]如果在 CraftTweaker 魔改脚本中包含中文等 Unicode 字符，那么在游戏内可能会显示为乱码。[/size]
 
-[size=4]为了避免这一问题，整合包作者往往需要反复折腾 U 码和中文的编码转换，[/size]
+[size=2]为了避免这一问题，整合包作者往往需要反复折腾 U 码和中文的编码转换，[/size]
 
-[size=4]既有损脚本可读性，又浪费了大量的时间和精力。[/size]
+[size=2]既有损脚本可读性，又浪费了大量的时间和精力。[/size]
 
-[size=4]我可以向你保证，装上这个扩展，可以一劳永逸地解决上述问题。[/size]
+[size=2]我可以向你保证，装上这个扩展，可以一劳永逸地解决上述问题。[/size]
 
-[size=16px][b]功能[/b][/size]
+[size=3][b]功能[/b][/size]
 
-[size=4]ZS 脚本中文转换器实现的功能是：[/size]
+[size=2]ZS 脚本中文转换器实现的功能是：[/size]
 
-[size=4][list]
+[size=2][list]
 [*]打开一个包含 U 码，如 [font=Monaco,Consolas,'Lucida Console','Courier New',serif][backcolor=#f6f8fa]"\u4e2d\u6587"[/backcolor][/font] 的 ZenScript 脚本时，所有的 U 码均转换为中文字符，如 [font=Monaco,Consolas,'Lucida Console','Courier New',serif][backcolor=#f6f8fa]"中文"[/backcolor][/font]；
 [*]保存 ZenScript 脚本文件时，所有的字符立即转换为 U 码。
 [*]在上面两种情形下，注释（[font=Monaco,Consolas,'Lucida Console','Courier New',serif][backcolor=#f6f8fa]//[/backcolor][/font] 开头的行）中的中文不会被转换。
 [*]还可以通过手动调用 VSCode 命令 [font=Monaco,Consolas,'Lucida Console','Courier New',serif][backcolor=#f6f8fa]Convert Native characters to Ascii[/backcolor][/font] 或 [font=Monaco,Consolas,'Lucida Console','Courier New',serif][backcolor=#f6f8fa]Convert Ascii to Native characters[/backcolor][/font]，将字符转 U 码或做相反操作。[/list][/size]
-[size=16px][b]安装方法[/b][/size]
+[size=3][b]安装方法[/b][/size]
 
-[size=4][list=1]
+[size=2][list=1]
 [*]从 VSCode 窗口左侧工具栏，或使用快捷键 [font=Monaco,Consolas,'Lucida Console','Courier New',serif][backcolor=#f6f8fa]Ctrl + Shift + X[/backcolor][/font]，打开“扩展”菜单。
 [*]搜索 ZenScript，即可找到作者名为 [font=Monaco,Consolas,'Lucida Console','Courier New',serif][backcolor=#f6f8fa]IsaacTadokoro[/backcolor][/font] 的本拓展，选择“安装”即可。[/list][/size]
-[size=4]也可以通过本拓展的 [url=https://marketplace.visualstudio.com/items?itemName=IsaacTadokoro.zenscript-unicode-converter]微软 VS MarketPlace 主页[/url] 来安装。[/size]
+[size=2]也可以通过本拓展的 [url=https://marketplace.visualstudio.com/items?itemName=IsaacThompson.zenscript-unicode-converter-revived]微软 VS MarketPlace 主页[/url] 来安装。
+因为我把旧 Publisher 的密码忘了，插件名称和发布者 ID 换了一个，但还是原来的那个插件。[/size]
 
-[size=16px][b]拓展配置[/b][/size]
+[size=3][b]拓展配置[/b][/size]
 
-[size=4]ZS 脚本中文转换器支持通过 VSCode 的配置编辑器进行配置，[/size]
+[size=2]ZS 脚本中文转换器支持通过 VSCode 的配置编辑器进行配置，[/size]
 
-[size=4]并配有中、日、英三种语言的说明，随着你的 VSCode 语言设置自动切换。配置选项如下：[/size]
+[size=2]并配有中、日、英三种语言的说明，随着你的 VSCode 语言设置自动切换。配置选项如下：[/size]
 
-[size=4][list]
-[*][size=4][font=Monaco,Consolas,'Lucida Console','Courier New',serif][backcolor=#f6f8fa]zenscript-unicode-converter.letter-case[/backcolor][/font]: 使用小写字母表示 Unicode 编码，如设为 false 则使用大写字母。[/size]
-[*][size=4][font=Monaco,Consolas,'Lucida Console','Courier New',serif][backcolor=#f6f8fa]zenscript-unicode-converter.comment-conversion[/backcolor][/font]: 是否转换注释中的字符。[/size]
-[*][size=4][font=Monaco,Consolas,'Lucida Console','Courier New',serif][backcolor=#f6f8fa]zenscript-unicode-converter.auto-conversion-on-save[/backcolor][/font]: 是否在保存 ZenScript 源文件时，自动进行编码转换，默认为 [font=Monaco,Consolas,'Lucida Console','Courier New',serif][backcolor=#f6f8fa]true[/backcolor][/font]（是）。[/size]
-[*][size=4][font=Monaco,Consolas,'Lucida Console','Courier New',serif][backcolor=#f6f8fa]zenscript-unicode-converter.auto-conversion-on-activate[/backcolor][/font]: 是否在切换活动的 ZenScript 源文件时，自动进行编码转换，默认为 [font=Monaco,Consolas,'Lucida Console','Courier New',serif][backcolor=#f6f8fa]true[/backcolor][/font]（是）。[/size]
-[*][size=4][font=Monaco,Consolas,'Lucida Console','Courier New',serif][backcolor=#f6f8fa]zenscript-unicode-converter.use-files.associations[/backcolor][/font]: 是否使用 settings.json 中的 [font=Monaco,Consolas,'Lucida Console','Courier New',serif][backcolor=#f6f8fa]"files.associations"[/backcolor][/font] 配置项来控制编码转换功能。[/size]
+[size=2][list]
+[*][size=2][font=Monaco,Consolas,'Lucida Console','Courier New',serif][backcolor=#f6f8fa]zenscript-unicode-converter.letter-case[/backcolor][/font]: 使用小写字母表示 Unicode 编码，如设为 false 则使用大写字母。[/size]
+[*][size=2][font=Monaco,Consolas,'Lucida Console','Courier New',serif][backcolor=#f6f8fa]zenscript-unicode-converter.comment-conversion[/backcolor][/font]: 是否转换注释中的字符。[/size]
+[*][size=2][font=Monaco,Consolas,'Lucida Console','Courier New',serif][backcolor=#f6f8fa]zenscript-unicode-converter.auto-conversion-on-save[/backcolor][/font]: 是否在保存 ZenScript 源文件时，自动进行编码转换，默认为 [font=Monaco,Consolas,'Lucida Console','Courier New',serif][backcolor=#f6f8fa]true[/backcolor][/font]（是）。[/size]
+[*][size=2][font=Monaco,Consolas,'Lucida Console','Courier New',serif][backcolor=#f6f8fa]zenscript-unicode-converter.auto-conversion-on-activate[/backcolor][/font]: 是否在切换活动的 ZenScript 源文件时，自动进行编码转换，默认为 [font=Monaco,Consolas,'Lucida Console','Courier New',serif][backcolor=#f6f8fa]true[/backcolor][/font]（是）。[/size]
+[*][size=2][font=Monaco,Consolas,'Lucida Console','Courier New',serif][backcolor=#f6f8fa]zenscript-unicode-converter.use-files.associations[/backcolor][/font]: 是否使用 settings.json 中的 [font=Monaco,Consolas,'Lucida Console','Courier New',serif][backcolor=#f6f8fa]"files.associations"[/backcolor][/font] 配置项来控制编码转换功能。[/size]
 
-[size=4]考虑到 CraftTweaker 不太可能更改 ZenScript 脚本文件的扩展名，不建议使用此功能，请保持此配置为默认值 [font=Monaco,Consolas,'Lucida Console','Courier New',serif][backcolor=#f6f8fa]false[/backcolor][/font]。[/size][/list][/size]
-[size=16px][b]开源许可[/b][/size]
+[size=2]考虑到 CraftTweaker 不太可能更改 ZenScript 脚本文件的扩展名，不建议使用此功能，请保持此配置为默认值 [font=Monaco,Consolas,'Lucida Console','Courier New',serif][backcolor=#f6f8fa]false[/backcolor][/font]。[/size][/list][/size]
+[size=3][b]开源许可[/b][/size]
 
-[size=4]ZS 脚本中文转换器是 VSCode 拓展 [url=https://github.com/cwan/native-ascii-converter]native-ascii-converter[/url] 的分支，[/size]
+[size=2]ZS 脚本中文转换器是 VSCode 拓展 [url=https://github.com/cwan/native-ascii-converter]native-ascii-converter[/url] 的分支，[/size]
 
-[size=4]上游项目依据 MIT 许可证开源，开源许可：[url=https://github.com/cwan/native-ascii-converter/blob/master/LICENSE。]https://github.com/cwan/native-ascii-converter/blob/master/LICENSE。[/url][/size]
+[size=2]上游项目依据 MIT 许可证开源，开源许可：[url=https://github.com/cwan/native-ascii-converter/blob/master/LICENSE。]https://github.com/cwan/native-ascii-converter/blob/master/LICENSE。[/url][/size]
 
-[size=4]本拓展的日文支持继承自上游项目，在此向原作者 cwan 致谢。[/size]
+[size=2]本拓展的日文支持继承自上游项目，在此向原作者 cwan 致谢。[/size]
 
-[size=4]与上游项目相同，本拓展依据 MIT 许可证在 [url=https://github.com/RisingInIris2017/zenscript-unicode-converter]GitHub[/url] 开源。[/size]
+[size=2]与上游项目相同，本拓展依据 MIT 许可证在 [url=https://github.com/RisingInIris2017/zenscript-unicode-converter]GitHub[/url] 开源。[/size]
 
-[size=4]本拓展的开源许可：[url=https://github.com/RisingInIris2017/zenscript-unicode-converter/blob/main/LICENSE]https://github.com/RisingInIris2017/zenscript-unicode-converter/blob/main/LICENSE[/url][/size]
+[size=2]本拓展的开源许可：[url=https://github.com/RisingInIris2017/zenscript-unicode-converter/blob/main/LICENSE]https://github.com/RisingInIris2017/zenscript-unicode-converter/blob/main/LICENSE[/url][/size]
 
-[size=16px][b]未来计划[/b][/size]
+[size=3][b]未来计划[/b][/size]
 
-[size=4]目前本拓展“注释（[font=Monaco,Consolas,'Lucida Console','Courier New',serif][backcolor=#f6f8fa]//[/backcolor][/font] 开头的行）中的中文不被转换”的功能不太完善，[/size]
+[size=2]目前本拓展唯一不能良好支持的注释形式是行末注释。[/size]
 
-[size=4]不支持有缩进的注释，且没有和拓展添加的两个命令良好配合。[/size]
+[size=2]如果你在不是分号结尾的行的末尾写了注释，这个注释总会被转换成 U 码，无视配置选项。[/size]
 
-[size=4]在之后的版本中会尝试改进。[/size]
+[size=2]这是一个比较复杂的问题，假如你有兴趣，可以发起 Pull Request 我们一起来解决它。[/size]
 
-[size=16px][b]结语[/b][/size]
+[size=3][b]结语[/b][/size]
 
-[size=4]这是本人首次使用 TypeScript 编程，也是首次编写 VSCode 拓展。[/size]
+[size=2]这是本人首次使用 TypeScript 编程，也是首次编写 VSCode 拓展。[/size]
 
-[size=4]如果有使用上的问题或建议，欢迎在这里 [url=https://github.com/RisingInIris2017/zenscript-unicode-converter/issues]提出 Issue[/url]，或在 MCBBS 帖子下方回复留言。[/size]
+[size=2]如果有使用上的问题或建议，欢迎在这里 [url=https://github.com/RisingInIris2017/zenscript-unicode-converter/issues]提出 Issue[/url]，或在 MCBBS 帖子下方回复留言。[/size]
 
-[size=4]如果你对编写 VSCode 插件有兴趣，也欢迎发起 Pull Request，一起来参与开发！[/size]
-
+[size=2]如果你对编写 VSCode 插件有兴趣，也欢迎发起 Pull Request，一起来参与开发！[/size]

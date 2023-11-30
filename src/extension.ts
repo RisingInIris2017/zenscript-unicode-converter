@@ -1,22 +1,24 @@
-import * as vscode from 'vscode';
+import { ExtensionContext, commands, window, workspace } from 'vscode';
 import * as utils from './utils';
+
+const moo = require('moo')
 
 const DISPLAY_NAME = 'Native-ASCII Converter';
 
 // For ZenScript, comment prefix is double slashes.
 const COMMENT_PREFIX = '//';
 
-export function activate(context: vscode.ExtensionContext) {
+export function activate(context: ExtensionContext) {
 
   // Register VSCode Text Editor commands
 
   context.subscriptions.push(
-    vscode.commands.registerTextEditorCommand(
+    commands.registerTextEditorCommand(
       'extension.convertNativeToAscii', handle(convertNativeToAscii))
   );
 
   context.subscriptions.push(
-    vscode.commands.registerTextEditorCommand(
+    commands.registerTextEditorCommand(
       'extension.convertAsciiToNative', handle(convertAsciiToNative))
   );
 
@@ -25,29 +27,27 @@ export function activate(context: vscode.ExtensionContext) {
 
 export function deactivate() {}
 
+// New implementation with Moo by @raylras
+let lexer = moo.compile({
+  string:  /"[^"]*"/,
+  code: { match: /[^"']+/, lineBreaks: true },
+})
 // Unicode Conversion for current active file.
 const convertNativeToAscii = () : void => {
   const lowerCase = utils.getConfigParameter('letter-case');
-  const commentConversion = utils.getConfigParameter('comment-conversion');
-
-  const newText = utils.getFullText()
-    .split(/\r?\n/g)
-    .map(line => {
-      if (commentConversion) {return utils.nativeToAscii(line, lowerCase);}
-      else {
-        var trimmedLine = line.trimLeft();
-        if (trimmedLine.startsWith(COMMENT_PREFIX)) {return line;}
-        else {
-          var removeStatementLine = trimmedLine.substring(trimmedLine.indexOf(';') + 1).trimLeft();
-          if (removeStatementLine.startsWith(COMMENT_PREFIX)) {return line}
-        }
-        return utils.nativeToAscii(line, lowerCase);
-      }      
-    })
-    .join(utils.getEol());
-
+  lexer.reset(utils.getFullText());
+  let newText = '';
+  let token;
+  while (token = lexer.next()) {
+    if (token.type === 'string') {
+        newText = newText + utils.nativeToAscii(token.text, lowerCase);
+    } else {
+        newText = newText + token.text;
+    }
+  }
   utils.setFullText(newText);
 };
+// This part of code is licensed under WTFPL by @raylras.
 
 // Convert ASCII to Unicode for current active file.
 const convertAsciiToNative = () : void => {
@@ -63,7 +63,7 @@ const handle = (func : Function) => {
     } catch (e) {
       console.error(DISPLAY_NAME, e);
       if (e.message) {
-        vscode.window.showErrorMessage(`[${DISPLAY_NAME}] ${e.message}`);
+        window.showErrorMessage(`[${DISPLAY_NAME}] ${e.message}`);
       }
     }
   };
@@ -73,7 +73,7 @@ const handle = (func : Function) => {
 const registerListeners = () : void => {
 
   // Convert when file saved
-  vscode.workspace.onWillSaveTextDocument(event => {
+  workspace.onWillSaveTextDocument(event => {
     if (utils.getConfigParameter('auto-conversion-on-save')
         && utils.isActiveDocumentZenScriptFile()) {
       handle(convertNativeToAscii)();
@@ -81,9 +81,9 @@ const registerListeners = () : void => {
   });
 
   // Convert when file avtivated
-  vscode.window.onDidChangeActiveTextEditor(textEditor => {
+  window.onDidChangeActiveTextEditor(textEditor => {
 
-    if (vscode.window.activeTextEditor
+    if (window.activeTextEditor
         && utils.getConfigParameter('auto-conversion-on-activate')
         && utils.isActiveDocumentZenScriptFile()) {
       handle(convertAsciiToNative)();

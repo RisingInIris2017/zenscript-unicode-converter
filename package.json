@@ -4,7 +4,7 @@
 	"description": "Fork of \"zenscript-unicode-converter\" VS Code extension, aims to help Minecraft modpack-makers to deal with unicodes.",
 	"publisher": "IsaacThompson",
 	"icon": "assets/icon.png",
-	"version": "1.0.6",
+	"version": "1.1.0",
 	"engines": {
 		"vscode": "^1.29.0"
 	},
@@ -29,12 +29,6 @@
 					"type": "boolean",
 					"default": false,
 					"description": "%zenscript-unicode-converter.letter-case%"
-				},
-				"zenscript-unicode-converter.comment-conversion": {
-					"scope": "resource",
-					"type": "boolean",
-					"default": false,
-					"description": "%zenscript-unicode-converter.comment-conversion%"
 				},
 				"zenscript-unicode-converter.auto-conversion-on-save": {
 					"scope": "resource",
@@ -92,5 +86,8 @@
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/RisingInIris2017/zenscript-unicode-converter"
+	},
+	"dependencies": {
+		"moo": "^0.5.2"
 	}
 }

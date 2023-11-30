@@ -24,7 +24,7 @@ This extension contributes the following settings:
 * `zenscript-unicode-converter.letter-case`: Use lower case in Unicode. False for upper case.
     + `true`: Lower case
     + `false`: Upper case
-* `zenscript-unicode-converter.comment-conversion`: Unicode conversion of the comment is carried out
+* `zenscript-unicode-converter.comment-conversion`: **Deprecated.** Unicode conversion of the comment is carried out
     + `true`: carried out
     + `false`: not carried out (default)
 * `zenscript-unicode-converter.auto-conversion-on-save`: Convert automatically when a ZenScript file is saved
@@ -49,3 +49,11 @@ If `zenscript-unicode-converter.use-files.associations` is` true` and the settin
 ```
 
 Caution: considering it is not very possibly fot ZenScript (or ZenCode for CraftTweaker 1.16 or above) to change its file extension name, you may not need to use this configuration and just keep it as default.
+
+## Credits
+
+In `extension.ts` there are a piece of code, **written and licensed under WTFPL** by @raylras. 
+
+It utilized [Moo](https://github.com/no-context/moo) to identify comments.
+
+This contribution is highly appreciated.
